@@ -15,7 +15,13 @@ class gerador():
     for i in range(largura):
       randomcaracter = r.choice(random)
 
-      senha.append(randomcaracter)
+      if randomcaracter in senha:
+        r.shuffle(random)
+        randomcaracter = r.choice(random)
+        senha.append(randomcaracter)
+      
+      else:
+        senha.append(randomcaracter)
 
     for i in senha:
       senha_str += i

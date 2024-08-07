@@ -11,5 +11,16 @@ while True:
   except ValueError:
     print("\n- Escolha invalida, tente novamente")
   if choice == 1:
-    largura = int(input("- Insira a quantidade de caracteres que a senha deve ter: "))
+    try:
+      largura = int(input("- Insira a quantidade de caracteres que a senha deve ter: "))
+      if largura > 28:
+        print("- A largura deve ir ate 28")
+        continue
+    except ValueError:
+      print("- Dado invalido")
+      continue
     gerador.gerarSenha(largura)
+
+  elif choice == 2:
+    print("Adeus!..")
+    break
