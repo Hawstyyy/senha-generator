@@ -2,15 +2,20 @@ import string
 import random as r
 
 class gerador():
-  def gerarSenha(largura):
+  def gerarSenha(largura,choice_special,choice_num,choice_letras):
     random = []
     senha = []
     senha_str = ''
 
-    random += string.ascii_lowercase
-    random += string.ascii_uppercase
-    random += string.digits
-    random += string.punctuation
+    if choice_letras == 'S':
+      random += string.ascii_lowercase
+      random += string.ascii_uppercase
+
+    if choice_num == 'S':
+      random += string.digits
+
+    if choice_special == 'S':
+      random += string.punctuation
 
     for i in range(largura):
       randomcaracter = r.choice(random)
